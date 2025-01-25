@@ -6,7 +6,6 @@ body {
     background-color: var(--background-dark);
   }
   
-
   :root {
     /* Cores primárias */
     --primary-color: #4A90E2;
@@ -25,8 +24,7 @@ body {
     --border-color: #E0E0E0;
   }
   
-
-
+  /* Container do menu */
   .menu-container {
     position: relative;
   }
@@ -38,6 +36,10 @@ body {
     border: none;
     cursor: pointer;
     margin: 10px;
+    background: var(--primary-color);
+    border: 1px solid var(--background-light);
+    border-radius: 5px;
+    box-shadow: 0 7px 6px rgba(0, 0, 0, 0.1);
   }
   
   /* Estilo do menu */
@@ -50,9 +52,11 @@ body {
     border: 1px solid var(--background-light);
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 7;
   }
   
-  .principal {
+  /* Menu Principal (vertical) */
+  .menu ul {
     list-style: none;
     margin: 0;
     padding: 10px;
@@ -60,10 +64,8 @@ body {
   
   .menu li {
     margin: 10px 0;
-    /*  border: 0.3px solid var (--background-light);  */
     border-color: var(--background-light);
     border-radius: 5px;
-
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
   }
   
@@ -79,15 +81,8 @@ body {
     border-radius: 3px;
   }
   
-
-  #home{
-    background: aqua;
-    margin-top: 2000px;
-  }
-
-
-  /* Estilos para o Menu Principal */
-nav {
+  /* Menu Principal Vertical */
+  nav {
     background-color: #333;
     padding: 10px 0;
     text-align: center;
@@ -100,9 +95,9 @@ nav {
   }
   
   nav li {
-    display: inline-block;
-    position: relative; /* Necessário para o submenu ficar abaixo do item "Sobre" */
-    margin: 0 15px;
+    display: block; /* Itens na vertical */
+    position: relative;
+    margin: 10px 0;
   }
   
   nav a {
@@ -118,24 +113,23 @@ nav {
     border-radius: 5px;
   }
   
-  /* Submenu */
+  /* Submenu (horizontal) */
   .submenu {
     display: none; /* Oculta o submenu por padrão */
     list-style-type: none;
     padding: 0;
     margin: 0;
-    position: absolute; /* Coloca o submenu abaixo do item "Sobre" */
-    top: 100%; /* Coloca o submenu imediatamente abaixo do item "Sobre" */
-    left: 0;
+    position: absolute; /* Coloca o submenu ao lado do item "Sobre" */
+    top: 0; /* Alinha o submenu na mesma linha do item "Sobre" */
+    left: 100%; /* Posiciona o submenu à direita do item */
     background-color: var(--primary-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    min-width: 150px; /* Largura mínima do submenu */
-  }
-  
-  /* Exibir o submenu quando clicado */
-  #aboutMenuItem.active > .submenu {
-    display: block; /* Torna o submenu visível */
+    border-right: 1px solid var(--background-light);
+    border-top: 1px solid var(--background-light);
+    border-bottom: 1px solid var(--background-light);
+    position: absolute;
+    z-index: 10;
   }
   
   .submenu li {
@@ -149,7 +143,18 @@ nav {
   }
   
   .submenu li a:hover {
-    background-color: #4A90E2;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--text-main);
+  }
+  
+  /* Exibir o submenu quando clicado */
+  #aboutMenuItem.active > .submenu {
+    display: block; /* Torna o submenu visível */
+  }
+  
+  /* Exemplo do conteúdo para Home */
+  #home {
+    background: aqua;
+    margin-top: 2000px;
   }
   
