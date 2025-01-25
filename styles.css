@@ -1,0 +1,155 @@
+/* Reseta margens e fontes */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-dark);
+  }
+  
+
+  :root {
+    /* Cores primárias */
+    --primary-color: #4A90E2;
+    --secondary-color: #50E3C2;
+  
+    /* Cores de fundo */
+    --background-light: #F5F7FA;
+    --background-dark: #2C3E50;
+  
+    /* Cores de texto */
+    --text-main: #333333;
+    --text-secondary: #7F8C8D;
+  
+    /* Sombras e bordas */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: #E0E0E0;
+  }
+  
+
+
+  .menu-container {
+    position: relative;
+  }
+  
+  /* Botão de hambúrguer */
+  .hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  /* Estilo do menu */
+  .menu {
+    display: none; /* Menu oculto por padrão */
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--background-light);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .principal {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .menu li {
+    margin: 10px 0;
+    /*  border: 0.3px solid var (--background-light);  */
+    border-color: var(--background-light);
+    border-radius: 5px;
+
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: var(--text-main);
+    padding: 5px 10px;
+    display: block;
+  }
+  
+  .menu a:hover {
+    background-color: var(--secondary-color);
+    border-radius: 3px;
+  }
+  
+
+  #home{
+    background: aqua;
+    margin-top: 2000px;
+  }
+
+
+  /* Estilos para o Menu Principal */
+nav {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    position: relative; /* Necessário para o submenu ficar abaixo do item "Sobre" */
+    margin: 0 15px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: inline-block;
+  }
+  
+  nav a:hover {
+    background-color: #4A90E2;
+    border-radius: 5px;
+  }
+  
+  /* Submenu */
+  .submenu {
+    display: none; /* Oculta o submenu por padrão */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute; /* Coloca o submenu abaixo do item "Sobre" */
+    top: 100%; /* Coloca o submenu imediatamente abaixo do item "Sobre" */
+    left: 0;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    min-width: 150px; /* Largura mínima do submenu */
+  }
+  
+  /* Exibir o submenu quando clicado */
+  #aboutMenuItem.active > .submenu {
+    display: block; /* Torna o submenu visível */
+  }
+  
+  .submenu li {
+    display: block;
+    padding: 10px;
+  }
+  
+  .submenu li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .submenu li a:hover {
+    background-color: #4A90E2;
+    color: white;
+  }
+  
